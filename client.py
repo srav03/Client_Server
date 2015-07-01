@@ -4,11 +4,15 @@ from socket import *
 
 
 client_socket = socket(AF_INET, SOCK_STREAM)
-host = gethostname()
-port = 33333
-socket_tuple = (host, port)
+
+#host = gethostbyaddr('localhost')
+port = 33345
+socket_tuple = ('localhost', port)
 client_socket.connect(socket_tuple)
-print client_socket.recv()
+for i in range(1, len("Thanks message from server")):
+    print client_socket.recv(16)
+    else:
+        break
 client_socket.close()
 
 

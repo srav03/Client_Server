@@ -4,14 +4,16 @@ from _socket import *
 
 
 new_socket = socket(AF_INET, SOCK_STREAM)
-host = gethostname()
-port = 33333
-socket_tuple = (host, port)
+#host = gethostbyaddr('localhost')
+port = 33345
+socket_tuple = ('localhost', port)
+#new_socket.setsockopt(SOL_SOCKET, SO_REUSEADDR, 1)
 new_socket.bind(socket_tuple)
 new_socket.listen(5)
 connection, client_address = new_socket.accept()
-new_socket.send("Thanks for connecting")
-new_socket.close()
+print ("Connection received from client: '%s'" % format(client_address))
+connection.send("Thanks message from server")
+#new_socket.close()
 connection.close()
 
 
