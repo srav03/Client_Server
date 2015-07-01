@@ -5,7 +5,7 @@ from _socket import *
 
 new_socket = socket(AF_INET, SOCK_STREAM)
 #host = gethostbyaddr('localhost')
-port = 33345
+port = 33347
 socket_tuple = ('localhost', port)
 #new_socket.setsockopt(SOL_SOCKET, SO_REUSEADDR, 1)
 new_socket.bind(socket_tuple)
